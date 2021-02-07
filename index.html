@@ -1,0 +1,115 @@
+<!DOCTYPE html> 
+<html lang="en"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <meta name="viewport" content= 
+      "width=device-width, initial-scale=1.0"> 
+    <title>Digital Clock</title>  
+</head> 
+<style>
+.bdclass{
+  background-color: pink;
+}
+
+.head{
+  text-align: center;
+  font-size: 80px;
+}
+
+
+#clock {  
+  margin: 10px;
+  font-size: 80px; 
+  text-align: center;
+} 
+
+#date{
+  font-size: 50px;
+  text-align: center;
+
+}
+#container{
+  text-align: center;
+}
+
+.stop {
+  width: 200px;
+  margin: 0 auto;
+  height:50px;
+  align-items: center;
+  text-align: center;
+  display:inline-block;
+}
+
+.start {
+  width: 200px;
+  margin: 0 auto;
+  height:50px;
+  align-items: center;
+  text-align: center;
+  display:inline-block;
+}
+</style>
+<body class="bdclass"> 
+
+  <h1 class="head">DIGITAL CLOCK</h1>
+    <div id="clock">00:00:00</div> 
+    <div id="date"></div><br><br>
+    <div id="container">
+    <button name="start" class="start" type="submit" value="start" onclick="myFunction2()">start</button>
+    <button name="stop" class="stop" id="stop" type="submit" value="Stop" onclick="myFunction()">Stop</button>
+    </div>
+<script>
+      function showTime() { 
+    let time = new Date(); 
+    let hour = time.getHours(); 
+    let min = time.getMinutes(); 
+    let sec = time.getSeconds(); 
+    am_pm = "AM"; 
+  
+    if (hour > 12) { 
+        hour -= 12; 
+        am_pm = "PM"; 
+    } 
+    if (hour == 0) { 
+        hr = 12; 
+        am_pm = "AM"; 
+    } 
+  
+    hour = hour < 10 ? "0" + hour : hour; 
+    min = min < 10 ? "0" + min : min; 
+    sec = sec < 10 ? "0" + sec : sec; 
+  
+    let currentTime = hour + ":" 
+            + min + ":" + sec + am_pm; 
+  
+    document.getElementById("clock") 
+            .innerHTML = currentTime; 
+} 
+ 
+
+
+  var today = new Date();
+  var dd = String(today.getDate()).padStart(2, '0');
+  var mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  var yyyy = today.getFullYear();
+
+  today = mm + '/' + dd + '/' + yyyy;
+  document.getElementById("date").innerHTML=today
+
+  var m;
+  function myFunction(){
+  clearInterval(m);
+}
+
+
+
+  function myFunction2(){
+    showTime();
+   m= setInterval("showTime()", 1000);
+  }
+
+</script>
+</body> 
+</html> 
+
