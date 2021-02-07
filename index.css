@@ -1,0 +1,38 @@
+.head{
+  text-align: center;
+  font-size: 80px;
+}
+
+
+#clock {  
+  margin: 10px;
+  font-size: 80px; 
+  text-align: center;
+} 
+
+#date{
+  font-size: 50px;
+  text-align: center;
+
+}
+#container{
+  text-align: center;
+}
+
+.stop {
+  width: 200px;
+  margin: 0 auto;
+  height:50px;
+  align-items: center;
+  text-align: center;
+  display:inline-block;
+}
+
+.start {
+  width: 200px;
+  margin: 0 auto;
+  height:50px;
+  align-items: center;
+  text-align: center;
+  display:inline-block;
+}
